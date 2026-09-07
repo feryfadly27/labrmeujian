@@ -1,0 +1,22 @@
+services:
+  db:
+    image: docker.io/library/mariadb:10.11
+    container_name: jadwal-lab-db
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3307:3306"
+    environment:
+      MARIADB_DATABASE: ${DB_DATABASE:?Set DB_DATABASE}
+      MARIADB_USER: ${DB_USERNAME:?Set DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD}
+    volumes:
+      - jadwal_lab_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h 127.0.0.1 -u root -p$$MARIADB_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  jadwal_lab_db_data:

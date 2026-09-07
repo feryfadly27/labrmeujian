@@ -1,0 +1,20 @@
+/.env
+/vendor/
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+!/storage/uploads/.htaccess
+
+# Sample/test output (bisa berisi data mahasiswa asli) — jangan pernah commit
+/*.pdf
+/*.xlsx
+/*.docx
+
+# Catatan kredensial pribadi — jangan pernah commit
+DATA.GW
+
+# Data personal asli (nama, NIP dosen) — hanya untuk seed lokal/production,
+# jangan dipublikasikan di repo publik
+/database/seeds/
+
+# Metadata tooling lokal
+/.claude/
