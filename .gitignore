@@ -17,7 +17,8 @@ DATA.GW
 /database/seeds/
 
 # Backup database — berisi data mahasiswa & dosen asli, jangan pernah commit
-/database/backups/
+/database/backups/*
+!/database/backups/backup.sh
 
 # Metadata tooling lokal
 /.claude/
