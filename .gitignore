@@ -16,5 +16,8 @@ DATA.GW
 # jangan dipublikasikan di repo publik
 /database/seeds/
 
+# Backup database — berisi data mahasiswa & dosen asli, jangan pernah commit
+/database/backups/
+
 # Metadata tooling lokal
 /.claude/
